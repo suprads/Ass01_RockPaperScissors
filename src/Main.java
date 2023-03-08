@@ -7,6 +7,7 @@ public class Main
         Scanner in = new Scanner(System.in);
         String playA = "";
         String playB = "";
+        String playAgain ="";
         String trash = "";
         boolean done = false;
         do {
@@ -65,6 +66,27 @@ public class Main
                 else {
                     System.out.println("Its a tie!");
                 }
+            }
+            do {
+                System.out.print("Do you want to play again?: ");
+
+                if (in.hasNextLine()) {
+                    playAgain = in.nextLine();
+                    done = true;
+                } else {
+                    trash = in.nextLine();
+                    System.out.println("\nEnter a valid input, not : " + trash);
+                }
+            } while (!done);
+
+            if(playAgain.equalsIgnoreCase("Y")){
+                done = false;
+            }
+            else if(playAgain.equalsIgnoreCase("N")){
+                System.out.println("Thank you for playing!");
+            }
+            else{
+                System.out.println("Please enter a valid input!");
             }
 
         }while(!done);
