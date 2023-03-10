@@ -8,32 +8,48 @@ public class Main
         String playA = "";
         String playB = "";
         String playAgain ="";
-        String trash = "";
         boolean done = false;
         do {
             do {
                 System.out.print("Enter Player A's move [RPS]: ");
 
-                if (in.hasNextLine()) {
-                    playA = in.nextLine();
+                playA = in.nextLine();
+
+                if (playA.equalsIgnoreCase("r")) {
                     done = true;
-                } else {
-                    trash = in.nextLine();
-                    System.out.println("\nEnter a valid input, not : " + trash);
+                }
+                else if (playA.equalsIgnoreCase("p")){
+                    done = true;
+                }
+                else if (playA.equalsIgnoreCase("s")){
+                    done = true;
+                }
+                else {
+                    System.out.println("\nEnter a valid input, not : " + playA);
+                    done = false;
                 }
             } while (!done);
 
             do {
                 System.out.print("Enter Player B's move [RPS]: ");
 
-                if (in.hasNextLine()) {
-                    playB = in.nextLine();
+                playB = in.nextLine();
+
+                if (playB.equalsIgnoreCase("r")) {
                     done = true;
-                } else {
-                    trash = in.nextLine();
-                    System.out.println("\nEnter a valid input, not : " + trash);
+                }
+                else if (playB.equalsIgnoreCase("p")){
+                    done = true;
+                }
+                else if (playB.equalsIgnoreCase("s")){
+                    done = true;
+                }
+                else {
+                    System.out.println("\nEnter a valid input, not : " + playB);
+                    done = false;
                 }
             } while (!done);
+
 
             if (playA.equalsIgnoreCase("R")) {
                 if(playB.equalsIgnoreCase("R")){
@@ -56,7 +72,8 @@ public class Main
                 else {
                     System.out.println("Scissors beat Paper! Player B wins!");
                 }
-            } else {
+            }
+            else {
                 if(playB.equalsIgnoreCase("R")){
                     System.out.println("Rock beats Scissors! Player B wins!");
                 }
@@ -67,23 +84,17 @@ public class Main
                     System.out.println("Its a tie!");
                 }
             }
-            do {
-                System.out.print("Do you want to play again?: ");
 
-                if (in.hasNextLine()) {
-                    playAgain = in.nextLine();
-                    done = true;
-                } else {
-                    trash = in.nextLine();
-                    System.out.println("\nEnter a valid input, not : " + trash);
-                }
-            } while (!done);
+            System.out.print("Do you want to play again?: ");
+
+            playAgain = in.next();
 
             if(playAgain.equalsIgnoreCase("Y")){
                 done = false;
             }
             else if(playAgain.equalsIgnoreCase("N")){
                 System.out.println("Thank you for playing!");
+                done = true;
             }
             else{
                 System.out.println("Please enter a valid input!");
