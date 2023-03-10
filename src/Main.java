@@ -87,7 +87,7 @@ public class Main
 
             System.out.print("Do you want to play again?: ");
 
-            playAgain = in.next();
+            playAgain = in.nextLine();
 
             if(playAgain.equalsIgnoreCase("Y")){
                 done = false;
